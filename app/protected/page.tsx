@@ -1,5 +1,5 @@
 // Supabase 사용 안 함 - 주석 처리
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 // import { createClient } from "@/lib/supabase/server";
 import { Suspense } from "react";
 
@@ -19,7 +19,11 @@ async function UserInfo() {
   // );
 
   // 임시 더미 UI (에러 방지용)
-  redirect("/auth/login");
+  return (
+    <p className="text-muted-foreground">
+      Protected page - Authentication not implemented
+    </p>
+  );
 }
 
 export default function ProtectedPage() {
