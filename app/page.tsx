@@ -8,8 +8,7 @@ import { FAQSection } from "@/components/faq-section";
 import { SuccessCasesSection } from "@/components/success-cases-section";
 import { StickyHeader } from "@/components/sticky-header";
 
-// Image assets from Figma
-const imgFrame = "http://localhost:3845/assets/85fccf263246c8cde10c157234297379122c1b9f.svg";
+// Image assets
 
 export default function LandingPage() {
   const [isTermsChecked, setIsTermsChecked] = useState(false);
@@ -169,7 +168,19 @@ export default function LandingPage() {
                   "고객 데이터 분석 리포트"
                 ].map((feature, idx) => (
                   <div key={idx} className="flex items-center gap-2.5">
-                    <img alt="체크" className="w-5 h-5 md:w-6 md:h-6 shrink-0" src={imgFrame} />
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5 md:w-6 md:h-6 shrink-0"
+                    >
+                      <path
+                        d="M9.54976 15.515L18.1883 6.87653C18.3369 6.7277 18.5109 6.6517 18.7103 6.64853C18.9096 6.64537 19.0868 6.72137 19.242 6.87653C19.3972 7.0317 19.4748 7.20987 19.4748 7.41103C19.4748 7.61237 19.3972 7.79061 19.242 7.94578L10.1825 17.0208C10.0017 17.2014 9.79076 17.2918 9.54976 17.2918C9.30876 17.2918 9.09785 17.2014 8.91701 17.0208L4.74201 12.8458C4.59335 12.6969 4.52001 12.5203 4.52201 12.3158C4.52385 12.1114 4.60235 11.9317 4.75751 11.7765C4.91268 11.6214 5.09085 11.5438 5.29201 11.5438C5.49335 11.5438 5.6716 11.6214 5.82676 11.7765L9.54976 15.515Z"
+                        fill="#582D86"
+                      />
+                    </svg>
                     <p className="text-[#0a0b0e] text-sm md:text-base font-medium leading-[1.48] tracking-[-0.4px]">
                       {feature}
                     </p>

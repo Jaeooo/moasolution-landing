@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 
 const logoWhite = "/icons/logo_white.svg"; // 스크롤 전 로고 (흰색)
 const logoScrolled = "/icons/logo_black.svg"; // 스크롤 후 플로팅 헤더 로고
-const img1 = "http://localhost:3845/assets/fcb749cdfe63137786ae4018ef92b521986db422.png";
 
 export function StickyHeader() {
   const pathname = usePathname();
@@ -158,11 +157,6 @@ export function StickyHeader() {
           {/* 스크롤 후에만 배경 이미지와 Glass 효과 표시 */}
           {isScrolled && (
             <>
-              <img
-                alt=""
-                className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[20px] size-full transition-opacity duration-500"
-                src={img1}
-              />
               {/* Glass 효과 레이어: Figma 설정값 반영 - 더 투명하게 조정 */}
               {/* Frost: 15, Light: -45° 80%, Refraction/Depth/Dispersion: 100, Splay: 0 */}
               <div
