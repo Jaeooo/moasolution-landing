@@ -1,0 +1,9 @@
+# SUIT 폰트 파일을 이 폴더에 저장하세요
+# 필요한 파일:
+# - SUIT-Regular.woff2 (weight: 400)
+# - SUIT-Medium.woff2 (weight: 500)
+# - SUIT-SemiBold.woff2 (weight: 600)
+# - SUIT-Bold.woff2 (weight: 700)
+# - SUIT-ExtraBold.woff2 (weight: 800)
+#
+# 다른 weight나 format (woff, ttf 등)이 필요하면 layout.tsx의 suit 폰트 설정을 수정하세요.
