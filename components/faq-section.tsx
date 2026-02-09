@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-const imgFrame1 = "http://localhost:3845/assets/1d5b77e58b98523b3337d02ddf81d87c29bdf753.svg";
-const imgFrame2 = "http://localhost:3845/assets/3b08f3dfde88343dcc41ee7959917afb1335d3ef.svg";
+const dropdownIcon = "/icons/dropdown.svg";
 
 const faqs = [
   {
@@ -58,7 +57,7 @@ export function FAQSection() {
                   <img
                     alt="화살표"
                     className="w-6 h-6 md:w-[30px] md:h-[30px]"
-                    src={openIndex === idx ? imgFrame1 : imgFrame2}
+                    src={dropdownIcon}
                   />
                 </div>
               </button>

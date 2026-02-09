@@ -4,16 +4,16 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-// Image assets from Figma
-const imgImage1895 = "http://localhost:3845/assets/443f90a725cd2457a1e848e2f7955f13fadeb920.png";
-const imgImage1894 = "http://localhost:3845/assets/9352736cec1b950070488f30c0cf1d5df3cb181a.png";
+// Image assets
+const blogSample1 = "/images/blog_sample_1.png";
+const blogSample2 = "/images/blog_sample_2.png";
 
 const successCases = [
   {
     id: 1,
     type: "image",
-    image1: imgImage1895,
-    image2: imgImage1894,
+    image1: blogSample1,
+    image2: undefined,
     category: "유튜브",
     title: '"지하철역 구석, 횟집이 대박난 비결은?!" \'화연\' 사장님 인터뷰 [모아솔루션의편리한 기능과 성공한 사장님 인터뷰]',
   },
@@ -34,7 +34,7 @@ const successCases = [
   {
     id: 4,
     type: "image",
-    image1: imgImage1895,
+    image1: blogSample2,
     category: "유튜브",
     title: '"상가 2층 구석, 고기집이 대박난 비결은?!"│\'청춘고깃집\' 사장님 인터뷰 [모아솔루션으로 성공한 사장님 인터뷰]',
   },
@@ -117,20 +117,20 @@ export function SuccessCasesSection() {
       if (isAutoScrollingRef.current) {
         return;
       }
-      
+
       // 사용자가 스크롤 중임을 표시
       isUserScrollingRef.current = true;
-      
+
       // 현재 스크롤 위치를 가져와서 정규화
       let currentScroll = container.scrollLeft;
       const normalizedScroll = normalizeScrollPosition(currentScroll);
-      
+
       // 정규화된 위치가 다르면 업데이트
       if (normalizedScroll !== currentScroll) {
         container.scrollLeft = normalizedScroll;
         currentScroll = normalizedScroll;
       }
-      
+
       // scrollPositionRef에 동기화
       scrollPositionRef.current = currentScroll;
 
@@ -138,7 +138,7 @@ export function SuccessCasesSection() {
       if (userScrollTimeoutRef.current) {
         clearTimeout(userScrollTimeoutRef.current);
       }
-      
+
       userScrollTimeoutRef.current = setTimeout(() => {
         isUserScrollingRef.current = false;
         // 오토 스크롤 재개 시 현재 스크롤 위치를 정확히 동기화
@@ -169,19 +169,19 @@ export function SuccessCasesSection() {
       // hover 상태가 아니고, 사용자가 스크롤 중이 아닐 때만 오토 스크롤
       if (!isHovered && !isUserScrollingRef.current && container && originalWidthRef.current > 0 && firstChildOffsetRef.current >= 0) {
         isAutoScrollingRef.current = true;
-        
+
         // 오토 스크롤 재개 시 현재 실제 스크롤 위치와 동기화
         if (scrollPositionRef.current === 0 || Math.abs(container.scrollLeft - scrollPositionRef.current) > 5) {
           scrollPositionRef.current = normalizeScrollPosition(container.scrollLeft);
         }
-        
+
         scrollPositionRef.current += scrollSpeed;
-        
+
         // 공통 리셋 함수를 사용하여 정규화
         scrollPositionRef.current = normalizeScrollPosition(scrollPositionRef.current);
-        
+
         container.scrollLeft = scrollPositionRef.current;
-        
+
         // 다음 프레임에서 오토 스크롤 플래그 해제 (스크롤 이벤트가 발생한 후)
         requestAnimationFrame(() => {
           isAutoScrollingRef.current = false;
